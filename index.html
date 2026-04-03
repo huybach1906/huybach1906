@@ -149,20 +149,23 @@
 						</div>
 						<div class="text">
 
-                            <strong class="number" data-start="2023">00</strong>
+                            <strong class="number" data-number="03" data-start="2023">03</strong>
 <span>Years experienced</span>
 
 <script>
-  const el = document.querySelector(".number");
-  const startYear = parseInt(el.dataset.start);
-  const currentYear = new Date().getFullYear();
+window.addEventListener("load", function () {
+  document.querySelectorAll(".number").forEach(function(el){
+    const startYear = parseInt(el.dataset.start);
+    const currentYear = new Date().getFullYear();
 
-  let experience = currentYear - startYear;
+    let experience = currentYear - startYear;
+    experience = experience.toString().padStart(2, "0");
 
-  // format 2 digits: 03, 04, 05...
-  experience = experience.toString().padStart(2, "0");
-
-  el.textContent = experience;
+    // update cả text + data-number để counter không reset
+    el.textContent = experience;
+    el.setAttribute("data-number", experience);
+  });
+});
 </script>
 							
 							<!-- <strong class="number" data-number="3">0</strong>
