@@ -148,8 +148,23 @@
 							<span class="flaticon-calendar"></span>
 						</div>
 						<div class="text">
-							<strong class="number" data-number="3">0</strong>
-							<span>Years experienced</span>
+
+                              <strong class="number" data-start="2023">0</strong>
+                          <span>Years experienced</span>
+
+                   <script>
+             const el = document.querySelector(".number");
+             const startYear = parseInt(el.dataset.start);
+         const currentYear = new Date().getFullYear();
+
+          const experience = currentYear - startYear;
+                       el.textContent = experience;
+                          </script>
+							
+							<!-- <strong class="number" data-number="3">0</strong>
+							<span>Years experienced</span> -->
+
+							
 						</div>
 					</div>
 				</div>
