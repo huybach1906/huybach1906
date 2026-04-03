@@ -149,8 +149,8 @@
 						</div>
 						<div class="text">
 
-                            <strong class="number" data-number="03" data-start="2023">03</strong>
-<span>Years experienced</span>
+                           <strong class="number" data-number="3" data-start="2023">3</strong>
+                           <span>Years experienced</span>
 
 <script>
 window.addEventListener("load", function () {
@@ -159,9 +159,7 @@ window.addEventListener("load", function () {
     const currentYear = new Date().getFullYear();
 
     let experience = currentYear - startYear;
-    experience = experience.toString().padStart(2, "0");
 
-    // update cả text + data-number để counter không reset
     el.textContent = experience;
     el.setAttribute("data-number", experience);
   });
