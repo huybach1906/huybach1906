@@ -285,6 +285,22 @@ button,
   appearance: button;
 }
 
+ .lang-switch{
+  margin-left: 20px;
+  padding: 6px 14px;
+  border: 1px solid #000;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lang-switch:hover{
+  background:#000;
+  color:#fff;
+}
+
 button:not(:disabled),
 [type="button"]:not(:disabled),
 [type="reset"]:not(:disabled),
