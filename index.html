@@ -42,10 +42,31 @@
 					<li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li>
 					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 				</ul>
-				 <button class="lang-switch">ENG</button>
-</nav>
-			</div>
-		</div>
+
+
+				<!-- start button language -->
+				<div class="lang-popup-wrapper">
+					<button class="buttonlanguage lang-button" id="langButton">
+						<span class="lang-text">ENG</span>
+						<svg width="20" height="20" viewBox="0 0 24 24" class="dropdown-icon">
+							<path class="dropdown-fill"
+								d="M17.9197 8.18005H11.6897H6.07975C5.11975 8.18005 4.63975 9.34005 5.31975 10.0201L10.4997 15.2001C11.3297 16.0301 12.6797 16.0301 13.5097 15.2001L15.4797 13.2301L18.6897 10.0201C19.3597 9.34005 18.8797 8.18005 17.9197 8.18005Z" />
+						</svg>
+					</button>
+
+					<div class="lang-popup" id="langPopup">
+						<div class="lang-option" data-lang="en">ENG</div>
+						<div class="lang-option" data-lang="vi">VIE</div>
+					</div>
+				</div>
+
+
+				<!-- end button language -->
+
+
+	</nav>
+	</div>
+	</div>
 	</nav>
 	<section id="home-section" class="hero">
 		<div class="home-slider owl-carousel">
@@ -61,7 +82,7 @@
 						<div class="one-forth d-flex  align-items-center ftco-animate"
 							data-scrollax=" properties: { translateY: '70%' }">
 							<div class="text">
-								<span class="subheading">Hello! This is Henry</span>
+								<span class="subheading">Hello! Have a nice day!</span>
 								<h1 class="mb-4 mt-3">Creative <span>UI/UX</span> Designer &amp; Developer</h1>
 								<p><a href="https://zalo.me/0376026750" target="_blank" class="btn btn-primary">Hire
 										me</a>
@@ -151,27 +172,27 @@
 						</div>
 						<div class="text">
 
-                           <strong class="number" data-number="3" data-start="2023">3</strong>
-                           <span>Years experienced</span>
+							<strong class="number" data-number="3" data-start="2023">3</strong>
+							<span>Years experienced</span>
 
-<script>
-window.addEventListener("load", function () {
-  document.querySelectorAll(".number").forEach(function(el){
-    const startYear = parseInt(el.dataset.start);
-    const currentYear = new Date().getFullYear();
+							<script>
+								window.addEventListener("load", function () {
+									document.querySelectorAll(".number").forEach(function (el) {
+										const startYear = parseInt(el.dataset.start);
+										const currentYear = new Date().getFullYear();
 
-    let experience = currentYear - startYear;
+										let experience = currentYear - startYear;
 
-    el.textContent = experience;
-    el.setAttribute("data-number", experience);
-  });
-});
-</script>
-							
+										el.textContent = experience;
+										el.setAttribute("data-number", experience);
+									});
+								});
+							</script>
+
 							<!-- <strong class="number" data-number="3">0</strong>
 							<span>Years experienced</span> -->
 
-							
+
 						</div>
 					</div>
 				</div>
@@ -696,7 +717,8 @@ window.addEventListener("load", function () {
 									<span class="mr-2">April 04, 2026</span>
 								</p>
 							</div>
-							<h3 class="heading"><a href="blog3.html">How is a UI Designer different from a UX Designer?</a>
+							<h3 class="heading"><a href="blog3.html">How is a UI Designer different from a UX
+									Designer?</a>
 							</h3>
 							<p>If you're new to product design, you've probably heard two roles very often...</p>
 						</div>
@@ -704,7 +726,7 @@ window.addEventListener("load", function () {
 				</div>
 				<!-- blog3 -->
 			</div>
-<div class="row d-flex">
+			<div class="row d-flex">
 
 				<!-- blog4 
 
@@ -963,6 +985,50 @@ window.addEventListener("load", function () {
 	<script src="js/google-map.js"></script>
 
 	<script src="js/main.js"></script>
+
+	<script>
+		// Language Popup Toggle - Click with Button Active State
+		document.addEventListener('DOMContentLoaded', function () {
+			const langButton = document.getElementById('langButton');
+			const langPopup = document.getElementById('langPopup');
+			const langOptions = document.querySelectorAll('.lang-option');
+
+			// Toggle popup on button click
+			langButton.addEventListener('click', function (e) {
+				e.stopPropagation();
+				langPopup.classList.toggle('active');
+				langButton.classList.toggle('active');
+			});
+
+			// Handle language selection
+			langOptions.forEach(function (option) {
+				option.addEventListener('click', function (e) {
+					e.stopPropagation();
+					const lang = this.dataset.lang;
+
+					// Update button text
+					document.querySelector('.lang-text').textContent = lang === 'en' ? 'ENG' : 'VIE';
+
+					// Close popup and remove active state
+					langPopup.classList.remove('active');
+					langButton.classList.remove('active');
+
+					// Save language preference
+					localStorage.setItem('selectedLang', lang);
+
+					// You can add your language change logic here
+				});
+			});
+
+			// Close popup when clicking outside
+			document.addEventListener('click', function (e) {
+				if (!e.target.closest('.lang-popup-wrapper')) {
+					langPopup.classList.remove('active');
+					langButton.classList.remove('active');
+				}
+			});
+		});
+	</script>
 
 </body>
 

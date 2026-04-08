@@ -4,6 +4,9 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -76,6 +79,113 @@ body {
 [tabindex="-1"]:focus {
   outline: 0 !important;
 }
+
+
+/* Language Button Styles */
+.lang-popup-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.buttonlanguage {
+  margin-left: 32px;
+  padding: 6px 14px;
+  border: 1px solid #b1b493;
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  transition: 0.3s;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  outline: none;
+}
+
+.buttonlanguage:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.buttonlanguage:hover {
+  background-color: #b1b493;
+  color: #ffffff;
+}
+
+.buttonlanguage.active {
+  background-color: #b1b493;
+  color: #ffffff;
+}
+
+.lang-button .dropdown-icon {
+  transition: transform 0.3s ease;
+}
+
+
+.buttonlanguage.active .dropdown-icon {
+  transform: rotate(-180deg);
+}
+
+.lang-popup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  min-width: 120px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+  display: none;
+  z-index: 1000;
+}
+
+.lang-popup.active {
+  display: block;
+}
+
+.lang-option {
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.lang-option:first-child {
+  border-bottom: 1px solid #eee;
+}
+
+.lang-option:hover {
+  background-color: #b1b493;
+  color: #ffffff;
+}
+
+.dropdown-fill {
+  fill: #000000;
+  transition: 0.3s;
+}
+
+.buttonlanguage:hover .dropdown-fill {
+  fill: #ffffff;
+}
+
+.buttonlanguage.active .dropdown-fill {
+  fill: #ffffff;
+}
+
+.dropdown :hover {
+  background: #b1b493;
+  color: #ffffff;
+}
+
+.dropdown-menu {
+  color: #000000;
+}
+
+
 
 
 hr {
@@ -285,7 +395,7 @@ button,
   appearance: button;
 }
 
- .lang-switch{
+.lang-switch {
   margin-left: 20px;
   padding: 6px 14px;
   border: 1px solid #000;
@@ -296,9 +406,9 @@ button,
   transition: 0.3s;
 }
 
-.lang-switch:hover{
-  background:#000;
-  color:#fff;
+.lang-switch:hover {
+  background: #000;
+  color: #fff;
 }
 
 button:not(:disabled),
@@ -12980,7 +13090,7 @@ h5,
 }
 
 .project .text span {
-  color:#eee;
+  color: #eee;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 600;
@@ -13416,7 +13526,7 @@ textarea.form-control {
 .mfp-with-zoom .mfp-container,
 .mfp-with-zoom.mfp-bg {
   opacity: 0;
-  
+
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
